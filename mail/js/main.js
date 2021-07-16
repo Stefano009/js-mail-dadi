@@ -12,12 +12,16 @@ var email = prompt("Per favore inserisca la sua email");
 
 var mailingList = ["stefano@gmail.com", "paolo@hotmail.it", "boris@libero.it","phil.anselmo@gmail.com", "bernadette@yahoo.com","kenshiro@hokuto.jp"];
 
-for (var i = 0; i < mailingList.length; i++) {  
-   
-        
-    document.getElementById("mailChecked").innerHTML = "welcome back " + email;        
+for (var i = 0; i < mailingList.length; i++) {          
+          
     console.log(mailingList[i]);
-    if (email === mailingList[i]) {break;}
-
+    if (email === mailingList[i]) {
+        document.getElementById("mailChecked").innerHTML = "welcome back " + mailingList[i];
+        break;
+        
+    }
 }
 
+if (email !== mailingList[i]) {
+        document.getElementById("wrongMail").innerHTML = email + " " + "is not in our database, please subscribe";
+}
